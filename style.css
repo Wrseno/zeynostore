@@ -11,102 +11,107 @@
     --green : #00EB09;
     --white : #fff;
 }
+
 *,
 *::before,
 *::after {
     margin: 0;
     padding: 0;
-    list-style-type: none;
-    text-decoration: none;
     box-sizing: border-box;
     font-family: 'Tahoma';
 }
+
+html { scroll-behavior: smooth; }
+
+a { text-decoration: none; }
+
+ul { list-style-type: none; }
+
 body {
     background-color: var(--dark-blue);
     color: var(--white);
 }
-header {
+
+button { display: none; }
+
+.container {
+    margin: 0 auto;
+    padding: 0 4rem;
+}
+
+.header {
+    justify-content: space-between;
+    display: flex;
     align-items: center;
     position: fixed;
-    width: 100%;
+    left: 0;
+    right: 0;
     top: 0;
-    padding: 2%;
+    padding: 1rem 4rem;
     font-weight: bold;
     font-size: 15pt;
-    justify-content: center;
-    text-align: center;
     background-color: var(--blue);  
     z-index: 999;
 }
+
 .title {
     color: var(--green);
     font-size: 15pt;
-    border-bottom: 1px solid var(--white);
-}
-.search-input {
-    border-radius: 0 0 0 20px;
-    border: none;
-    padding: 2px;
-    background-color: var(--white);
-    margin-bottom: 15px;
-    width: 30%;
-}
-.search-submit {
-    border-radius: 0 20px 0 0;
-    border: none;
-    padding: 2px;
-    margin-left: -5px;
-    background-color: var(--green);
-    color: var(--blue);
     font-weight: bold;
-    width: 5%;
 }
-nav ul {
+
+nav { 
     display: flex;
-    gap: 2rem;
-    justify-content: center;
+    position: relative;
 }
+
 nav ul li a {
     color: var(--green);
-    font-size: 12pt;
+    font-size: 11pt;
 } 
+
 nav ul li a:hover { border-bottom: 1px solid var(--white); }
-li.active a { border-bottom: 2px solid var(--white); }
+
+li.active a { color: var(--white); }
+
 .menu { transition: .5s; }
-.container {
-    width: 100%;
-    height: 100vh;
-    margin-top: 5%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-} 
+
 .swiper {
-    width: 80%;
-    height: fit-content;
+    width: 70%;
+    margin-top: 6rem;
 } 
+
 .swiper-slide img {
     width: 100%;
     border-radius: 10px;
 }
+
 .list__harga { color: var(--white); } 
-.title-p {
-    margin-top: 5%;
-    margin-left: 65px;
+
+.title-p, .title-v, .title-s {
+    margin-top: 2rem;
     margin-bottom: 10px;
 }
-.populer {
+
+.populer, .streaming, .voucher {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    width: 90%;
-    margin-left: 5%;
-    margin-right: 5%;
     gap: 1rem;
     font-weight: bold;
 }
-.populer img  { border-radius: 10px; }
+
+.populer img, .streaming img, .voucher img  { 
+    border-radius: 10px; 
+    width: 100%;
+}
+
 .link a { color: var(--white); }
-.link a:hover { color: var(--green); }
+
+.link a:hover { 
+    color: var(--green); 
+    transition-duration: .3s;
+}
+
 .overlay  {
   position: fixed;
   top: 0;
@@ -119,10 +124,12 @@ li.active a { border-bottom: 2px solid var(--white); }
   opacity: 0;
   z-index: 999;
 }
+
 .overlay:target  {
     visibility: visible;
     opacity: 1;
 }
+
 .popup  {
     margin: 70px auto;
     padding: 20px;
@@ -132,11 +139,13 @@ li.active a { border-bottom: 2px solid var(--white); }
     position: relative;
     transition: all 5s ease-in-out;
 }
+
 .popup h2 {
     margin-top: 0;
     color: var(--white);
     font-family: Tahoma, Arial, sans-serif;
 }
+
 .popup .close {
     position: absolute;
     top: 20px;
@@ -147,80 +156,58 @@ li.active a { border-bottom: 2px solid var(--white); }
     text-decoration: none;
     color: #333;
 }
+
 .popup .close:hover { color: #06D85F; }
+
 .content {
     max-height: 30%;
     width: 50%;
 }
+
 .harga { color: var(--green); }
+
 .pesan {
     color: var(--blue);
     background-color: var(--green);
     border-radius: 10px;
     padding: 10px;
 }
+
 .pesan:hover {
     color: var(--green);
     background-color: var(--dark-blue);
 }
+
 .pesan img  {
     margin-top: 20px;
     width: 20px;
     background-color: var(--green);
     color: var(--blue);
 }
-.title-s {
-    margin-top: 5%;
-    margin-left: 65px;
-    margin-bottom: 10px;
-}
-.streaming {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    width: 90%;
-    margin-left: 5%;
-    margin-right: 5%;
-    gap: 1rem;
-    font-weight: bold;
-}
-.streaming img { border-radius: 10px; }
-.title-v {
-    margin-top: 5%;
-    margin-left: 65px;
-    margin-bottom: 10px;
-}
-.voucher {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    width: 90%;
-    margin-left: 5%;
-    margin-right: 5%;
-    gap: 1rem;
-    font-weight: bold;
-} 
-.voucher img { border-radius: 10px; }
-.tentang {
-    display: grid;
-    justify-content: center;
-    margin-top: 10%;
-    font-size: 15pt;
-}
+
 .card {
     background-color: var(--blue);
     padding: 5%;
     border-radius: 10px;
     box-shadow: 20px 20px black;
 }
+
 .card h1 { text-align: center; }
-html { scroll-behavior: smooth; }
+
 footer {
     display: grid;
     justify-content: center;
     background-color: var(--blue);
     margin-top: 10%;
     padding: 2%;
+    text-align: center;
 }
-.sosmed img  { width: 50px; }
+
+.sosmed img  { 
+    width: 30px; 
+    margin: 0 auto;
+}
+
 #copyright {
     text-align: center;
     padding: 10px;
@@ -228,356 +215,92 @@ footer {
 
 
 /* RESPONSIVE WEB DI HANDPHONE */
-@media screen and (max-width:600px) {
-    body { overflow-x: hidden; }
-    header { font-size: 20pt; }
-    nav ul li a { font-size: 10pt; }
-    .container {
-        width: 100%;
-        margin-top: 20%;
-        height: 40vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+@media screen and (max-width:640px) {
+    .container { 
+        max-width: 640px; 
+        padding: 1rem;
     }
-    .title-p {
-        font-size: 15pt;
-        margin-left: 30px;
-    }
-    .populer {
-        display: grid;
-        grid-template-columns: repeat(3 , 1fr);
-        width: 90%;
-        margin-left: 7%;
-        margin-right: 3%;
-        font-size: 10pt;
-        margin-top: 5%;
-    }
-    .populer img { width: 100%; }
-    .popup {
-        margin: 70px auto;
-        padding: 10px;
-        background: var(--dark-blue);
-        border-radius: 5px;
-        width: 80%;
-        position: relative;
-        transition: all 5s ease-in-out;
-    }
-    .title-s {
-        margin-top: 10%;
-        font-size: 15pt;
-        margin-left: 30px;
-    }
-    .streaming {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        width: 90%;
-        margin-left: 5%;
-        margin-right: 5%;
-        font-size: 10pt;
-    }
-    .streaming img { width: 100%; }
-    .title-v {
-        margin-top: 10%;
-        font-size: 15pt;
-        margin-left: 30px;
-    }
-    .voucher {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        width: 90%;
-        margin-left: 5%;
-        margin-right: 5%;
-        font-size: 10pt;
-    }
-    .voucher img {
-        border-radius: 10px;
-        width: 100%;
-    }
-    .pesan img { width: 10%; }
-    .tentang {
-        width: 90%;
-        margin-left: 5%;
-        margin-right: 5%;
-        height: 200px;
-        font-size: 11pt;
-        margin-bottom: 10%;
-    }
-    footer { font-size: 10pt; }
-    .sosmed img  { width: 30px; }
-} 
 
+    .hidden { display: none; }
 
-/* RESPONSIVE WEB DI TABLET */
-@media screen and (min-width:600px) {
-    body { overflow-x: hidden; }
-    header { font-size: 20pt; }
-    nav ul li a { font-size: 12pt; }
-    .container {
-        width: 100%;
-        margin-top: 20%;
-        height: 40vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .title-p {
-        font-size: 15pt;
-        margin-left: 30px;
-    }
-    .populer {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        width: 90%;
-        margin-left: 5%;
-        margin-right: 5%;
-        font-size: 10pt;
-        margin-top: 5%;
-    }
-    .populer img { width: 100%; }
-    .popup {
-        margin: 70px auto;
-        padding: 10px;
-        background: var(--dark-blue);
-        border-radius: 5px;
-        width: 80%;
-        position: relative;
-        transition: all 5s ease-in-out;
-    }
-    .title-s {
-        margin-top: 10%;
-        font-size: 15pt;
-        margin-left: 30px;
-    }
-    .streaming {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        width: 90%;
-        margin-left: 5%;
-        margin-right: 5%;
-        font-size: 10pt;
-    }
-    .streaming img { width: 100%; }
-    .title-v {
-        margin-top: 10%;
-        font-size: 15pt;
-        margin-left: 30px;
-    }
-    .voucher {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        width: 90%;
-        margin-left: 5%;
-        margin-right: 5%;
-        font-size: 10pt;
-    }
-    .voucher img {
-        border-radius: 10px;
-        width: 100%;
-    }
-    .pesan img { width: 10%; }
-    .tentang {
-        width: 90%;
-        margin-left: 5%;
-        margin-right: 5%;
-        height: 200px;
-        font-size: 13pt;
-        margin-bottom: 10%;
-    }
-    footer { font-size: 10pt; }
-    .sosmed img { width: 50px; }
-} 
+    button { display: block; }
 
-
-@media screen and (min-width:968px){
-    .title {
-        color: var(--green);
-        font-size: 15pt;
-        border-bottom: 1px solid var(--white);
-    }
-    .search-input {
-        border-radius: 0 0 0 20px;
-        border: none;
-        padding: 2px;
-        background-color: var(--white);
-        margin-bottom: 15px;
-        width: 30%;
-    }
-    .search-submit {
-        border-radius: 0 20px 0 0;
-        border: none;
-        padding: 2px;
-        margin-left: -5px;
-        background-color: var(--green);
-        color: var(--blue);
-        font-weight: bold;
-        width: 5%;
-    }
     nav ul {
-        display: flex;
-        gap: 2rem;
-        justify-content: center;
-    }
-    nav ul li a {
-        color: var(--green);
-        font-size: 12pt;
-    }
-    nav ul li a:hover { border-bottom: 1px solid var(--white); }
-    li.active a { border-bottom: 2px solid var(--white); }
-    .menu { transition: .5s; }
-    .container {
-        width: 100%;
-        height: 100vh;
-        margin-top: 5%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .swiper {
-        width: 80%;
-        height: fit-content;
-    }
-    .swiper-slide img {
-        width: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: var(--blue);
+        padding: 2rem;
+        width: 15rem;
+        height: 10rem;
         border-radius: 10px;
     }
-    .list__harga { color: var(--white); }
-    .title-p {
-        font-size: 20pt;
-        margin-top: 5%;
-        margin-left: 65px;
-        margin-bottom: 10px;
-    }
-    .populer {
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        width: 90%;
-        margin-left: 5%;
-        margin-right: 5%;
-        gap: 1rem;
-        font-weight: bold;
-    }
-    .populer img { border-radius: 10px; }
-    .link a { color: var(--white); }
-    .link a:hover { color: var(--green); }
-    .overlay  {
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: rgba(0, 0, 0, 0.7);
-        transition: opacity 500ms;
-        visibility: hidden;
-        opacity: 0;
+
+    .hamburger-menu {
+        border: none;
+        background-color: transparent;
+        position: relative;
         z-index: 999;
     }
-    .overlay:target {
-        visibility: visible;
-        opacity: 1;
-    }
-    .popup {
-        margin: 70px auto;
-        padding: 20px;
-        background: var(--dark-blue);
-        border-radius: 5px;
-        width: 30%;
-        position: relative;
-        transition: all 5s ease-in-out;
-    }
-    .popup h2 {
-        margin-top: 0;
-        color: var(--white);
-        font-family: Tahoma, Arial, sans-serif;
-    }
-    .popup .close {
-        position: absolute;
-        top: 20px;
-        right: 30px;
-        transition: all 200ms;
-        font-size: 30px;
-        font-weight: bold;
-        text-decoration: none;
-        color: #333;
-    }
-    .popup .close:hover { color: #06D85F; }
-    .content {
-        max-height: 30%;
-        width: 50%;
-    }
-    .harga { color: var(--green); }
-    .pesan {
-        color: var(--blue);
-        background-color: var(--green);
+    
+    .hamburger-menu:hover { cursor: pointer; }
+    
+    .hamburger-menu > span:nth-child(1) {
+        width: 25px;
+        height: 2px;
+        background: var(--white);
+        display: block;
+        margin: 5px 0;
         border-radius: 10px;
-        padding: 10px;
     }
-    .pesan:hover {
-        color: var(--green);
-        background-color: var(--dark-blue);
+    
+    .hamburger-menu > span:nth-child(2) {
+        width: 15px;
+        height: 2px;
+        background: var(--green);
+        display: block;
+        margin: 5px 0;
+        border-radius: 10px;
     }
-    .pesan img {
-        margin-top: 20px;
-        width: 20px;
-        background-color: var(--green);
-        color: var(--blue);
+    
+    .hamburger-menu > span:nth-child(3) {
+        width: 25px;
+        height: 2px;
+        background: var(--white);
+        display: block;
+        margin: 5px 0;
+        border-radius: 10px;
     }
-    .title-s {
-        font-size: 20pt;
-        margin-top: 5%;
-        margin-left: 65px;
-        margin-bottom: 10px;
-    }
-    .streaming {
+    
+    .hamburger-active > span { transform: rotate(45deg); }
+    
+    .hamburger-active > span:nth-child(2) { display: none; }
+    
+
+    .swiper { width: 90%; }
+
+    .populer, .streaming, .voucher {
         display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        width: 90%;
-        margin-left: 5%;
-        margin-right: 5%;
+        grid-template-columns: repeat(3, 1fr);
         gap: 1rem;
         font-weight: bold;
     }
-    .streaming img  { border-radius: 10px; }
-    .title-v {
-        font-size: 20pt;
-        margin-top: 5%;
-        margin-left: 65px;
-        margin-bottom: 10px;
-    }
-    .voucher {
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        width: 90%;
-        margin-left: 5%;
-        margin-right: 5%;
+
+    .popup { width: 90%; }
+}
+
+@media screen and (min-width: 640px) {    
+    .container { max-width: 1280px; }
+
+    nav ul {
+        display: flex;
         gap: 1rem;
-        font-weight: bold;
     }
-    .voucher img { border-radius: 10px; }
-    .tentang {
+    
+    .footer-grid {
         display: grid;
-        justify-content: center;
-        margin-top: 10%;
-        font-size: 15pt;
+        grid-template-columns: repeat(2, 1fr);
     }
-    .card {
-        background-color: var(--blue);
-        padding: 5%;
-        border-radius: 10px;
-        box-shadow: 20px 20px black;
-    }
-    .card h1 { text-align: center; }
-    html { scroll-behavior: smooth; }
-    footer {
-        display: grid;
-        justify-content: center;
-        background-color: var(--blue);
-        margin-top: 10%;
-        padding: 2%;
-    }
-    .sosmed img { width: 50px; }
-    #copyright {
-        text-align: center;
-        padding: 10px;
-    }
+
+    .sosmed { margin: 0 auto; }
 }

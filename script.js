@@ -10,6 +10,15 @@ li.forEach(el=>{
     });
 });
 
+// hamburger menu
+const hamburger = document.querySelector('.hamburger-menu');
+const navbar = document.querySelector('.navbar-ul');
+
+hamburger.addEventListener('click', function () {
+    hamburger.classList.toggle('hamburger-active');
+    navbar.classList.toggle('hidden');
+});
+
 // image slider
 const swiper = new Swiper('.swiper', {
     autoplay:{
@@ -29,6 +38,3 @@ const swiper = new Swiper('.swiper', {
       prevEl: '.swiper-button-prev',
     },
   });
-
-
-  
