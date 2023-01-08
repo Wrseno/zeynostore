@@ -6,10 +6,10 @@
 */
 
 :root {
-    --blue : #2C2546;
-    --dark-blue : #1B1535;
-    --green : #00EB09;
-    --white : #fff;
+    --blue: #2C2546;
+    --dark-blue: #1B1535;
+    --green: #00EB09;
+    --white: #fff;
 }
 
 *,
@@ -21,18 +21,26 @@
     font-family: 'Tahoma';
 }
 
-html { scroll-behavior: smooth; }
+html {
+    scroll-behavior: smooth;
+}
 
-a { text-decoration: none; }
+a {
+    text-decoration: none;
+}
 
-ul { list-style-type: none; }
+ul {
+    list-style-type: none;
+}
 
 body {
     background-color: var(--dark-blue);
     color: var(--white);
 }
 
-button { display: none; }
+button {
+    display: none;
+}
 
 .container {
     margin: 0 auto;
@@ -50,7 +58,7 @@ button { display: none; }
     padding: 1rem 4rem;
     font-weight: bold;
     font-size: 15pt;
-    background-color: var(--blue);  
+    background-color: var(--blue);
     z-index: 999;
 }
 
@@ -60,7 +68,7 @@ button { display: none; }
     font-weight: bold;
 }
 
-nav { 
+nav {
     display: flex;
     position: relative;
 }
@@ -68,69 +76,85 @@ nav {
 nav ul li a {
     color: var(--green);
     font-size: 11pt;
-} 
+}
 
-nav ul li a:hover { border-bottom: 1px solid var(--white); }
+nav ul li a:hover {
+    border-bottom: 1px solid var(--white);
+}
 
-li.active a { color: var(--white); }
+li.active a {
+    color: var(--white);
+}
 
-.menu { transition: .5s; }
+.menu {
+    transition: .5s;
+}
 
 .swiper {
     width: 70%;
     margin-top: 6rem;
-} 
+}
 
 .swiper-slide img {
     width: 100%;
     border-radius: 10px;
 }
 
-.list__harga { color: var(--white); } 
+.list__harga {
+    color: var(--white);
+}
 
-.title-p, .title-v, .title-s {
+.title-p,
+.title-v,
+.title-s {
     margin-top: 2rem;
     margin-bottom: 10px;
 }
 
-.populer, .streaming, .voucher {
+.populer,
+.streaming,
+.voucher {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 1rem;
     font-weight: bold;
 }
 
-.populer img, .streaming img, .voucher img  { 
-    border-radius: 10px; 
+.populer img,
+.streaming img,
+.voucher img {
+    border-radius: 10px;
     width: 100%;
 }
 
-.link a { color: var(--white); }
+.link a {
+    color: var(--white);
+}
 
-.link a:hover { 
-    color: var(--green); 
+.link a:hover {
+    color: var(--green);
     transition-duration: .3s;
 }
 
-.overlay  {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.7);
-  transition: opacity 500ms;
-  visibility: hidden;
-  opacity: 0;
-  z-index: 999;
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 999;
 }
 
-.overlay:target  {
+.overlay:target {
     visibility: visible;
     opacity: 1;
 }
 
-.popup  {
+.popup {
     margin: 70px auto;
     padding: 20px;
     background: var(--dark-blue);
@@ -157,32 +181,35 @@ li.active a { color: var(--white); }
     color: #333;
 }
 
-.popup .close:hover { color: #06D85F; }
-
-.content {
-    max-height: 30%;
-    width: 50%;
+.popup .close:hover {
+    color: #06D85F;
 }
 
-.harga { color: var(--green); }
+.content {
+    width: 100%;
+}
+
+.harga {
+    color: var(--green);
+}
 
 .pesan {
     color: var(--blue);
     background-color: var(--green);
     border-radius: 10px;
     padding: 10px;
+    width: 100%;
 }
 
 .pesan:hover {
     color: var(--green);
-    background-color: var(--dark-blue);
+    background-color: var(--blue);
+    transition: ease-in .3s;
 }
 
-.pesan img  {
-    margin-top: 20px;
+.pesan img {
+    margin-top: 30px;
     width: 20px;
-    background-color: var(--green);
-    color: var(--blue);
 }
 
 .card {
@@ -192,7 +219,9 @@ li.active a { color: var(--white); }
     box-shadow: 20px 20px black;
 }
 
-.card h1 { text-align: center; }
+.card h1 {
+    text-align: center;
+}
 
 footer {
     display: grid;
@@ -203,12 +232,12 @@ footer {
     text-align: center;
 }
 
-.sosmed img  { 
-    width: 30px; 
+.sosmed img {
+    width: 30px;
     margin: 0 auto;
 }
 
-#copyright {
+.copyright {
     text-align: center;
     padding: 10px;
 }
@@ -216,14 +245,18 @@ footer {
 
 /* RESPONSIVE WEB DI HANDPHONE */
 @media screen and (max-width:640px) {
-    .container { 
-        max-width: 640px; 
+    .container {
+        max-width: 640px;
         padding: 1rem;
     }
 
-    .hidden { display: none; }
+    .hidden {
+        display: none;
+    }
 
-    button { display: block; }
+    button {
+        display: block;
+    }
 
     nav ul {
         position: absolute;
@@ -242,10 +275,12 @@ footer {
         position: relative;
         z-index: 999;
     }
-    
-    .hamburger-menu:hover { cursor: pointer; }
-    
-    .hamburger-menu > span:nth-child(1) {
+
+    .hamburger-menu:hover {
+        cursor: pointer;
+    }
+
+    .hamburger-menu>span:nth-child(1) {
         width: 25px;
         height: 2px;
         background: var(--white);
@@ -253,8 +288,8 @@ footer {
         margin: 5px 0;
         border-radius: 10px;
     }
-    
-    .hamburger-menu > span:nth-child(2) {
+
+    .hamburger-menu>span:nth-child(2) {
         width: 15px;
         height: 2px;
         background: var(--green);
@@ -262,8 +297,8 @@ footer {
         margin: 5px 0;
         border-radius: 10px;
     }
-    
-    .hamburger-menu > span:nth-child(3) {
+
+    .hamburger-menu>span:nth-child(3) {
         width: 25px;
         height: 2px;
         background: var(--white);
@@ -271,36 +306,54 @@ footer {
         margin: 5px 0;
         border-radius: 10px;
     }
-    
-    .hamburger-active > span { transform: rotate(45deg); }
-    
-    .hamburger-active > span:nth-child(2) { display: none; }
-    
 
-    .swiper { width: 90%; }
+    .hamburger-active>span {
+        transform: rotate(45deg);
+    }
 
-    .populer, .streaming, .voucher {
+    .hamburger-active>span:nth-child(2) {
+        display: none;
+    }
+
+
+    .swiper {
+        width: 90%;
+    }
+
+    .populer,
+    .streaming,
+    .voucher {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 1rem;
         font-weight: bold;
     }
 
-    .popup { width: 90%; }
+    .popup {
+        width: 90%;
+    }
+
+    .copyright {
+        font-size: 10pt;
+    }
 }
 
-@media screen and (min-width: 640px) {    
-    .container { max-width: 1280px; }
+@media screen and (min-width: 640px) {
+    .container {
+        max-width: 1280px;
+    }
 
     nav ul {
         display: flex;
         gap: 1rem;
     }
-    
+
     .footer-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .sosmed { margin: 0 auto; }
+    .sosmed {
+        margin: 0 auto;
+    }
 }
